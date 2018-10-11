@@ -12,3 +12,5 @@ DSTRING=`grep -rI Date: ${PWD}`
 
 # oder geht auch mit
 #DSTRING=`grep -rI Date: *`
+
+read -n1 -r -p "Press any key to continue..." key
