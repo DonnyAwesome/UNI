@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Year: $_yea"
 echo "Mnth: $_mnt"
 echo "Day : $_day"
