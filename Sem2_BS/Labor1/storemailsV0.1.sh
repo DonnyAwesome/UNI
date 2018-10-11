@@ -1,4 +1,5 @@
 #!/bin/bash
+#v0.1
 _timeStamp=1
 _pathEmails=''
 _pathStore=''
