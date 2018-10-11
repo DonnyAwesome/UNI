@@ -15,9 +15,17 @@ DSTRING= ``
 #DSTRING=`grep -rI Date: * | cut -d ":" -f 2`
 #Date DSTRING=`grep -rI Date DSTRING=`grep -rI Date #DSTRING=`grep -rI Date DSTRING=`grep -rI Date #DSTRING=`grep -rI Date #DSTRING=`grep -rI Date
  
-# Gibt den Datum aus
+# Gibt den Datum aus (DAY, DD MM YYYY HH)
 #DSTRING=`grep -rI Date: eml/ | cut -d ":" -f 3`
 DSTRING=`grep -rI Date: Beispielmails/ | cut -d ":" -f 3`
+
+# Gibt die Minuten anzahl aus (MM)
+#DSTRING=`grep -rI Date: eml/ | cut -d ":" -f 4`
+DSTRING=`grep -rI Date: Beispielmails/ | cut -d ":" -f 4`
+
+# Gibt die Sekunden aus (SS)
+#DSTRING=`grep -rI Date: eml/ | cut -d ":" -f 5`
+DSTRING=`grep -rI Date: Beispielmails/ | cut -d ":" -f 5`
  
 # Kontrolle ob DSTRING die Liste der Datum enstpicht 
 #echo ${DSTRING}
