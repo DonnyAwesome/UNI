@@ -1,5 +1,35 @@
+//Aufgabe 1
 A = [1 4; 2 5; 3 6];
 B = [1 4 0 0; 2 5 0 0; 3 6 0 0];
 C = [1 4 1 2 3; 2 5 4 5 6; 3 6 0 0 0];
 
+//Aufgabe 2
 D = zeros(5, 10);
+j = 1;
+k = 1;
+
+for i = 1 : 50
+    D(j, k) = i;
+    k = k + 1;
+    
+    if (i == 10)
+       j = 2;
+       k = 1; 
+    end
+    if (i == 20)
+       j = 3;
+       k = 1; 
+    end
+    if (i == 30)
+       j = 4;
+       k = 1; 
+    end
+    if (i == 40)
+       j = 5;
+       k = 1; 
+    end
+end
+
+if (j%10) == 0 then
+    error("AAAAAAAAAAAA");
+end
