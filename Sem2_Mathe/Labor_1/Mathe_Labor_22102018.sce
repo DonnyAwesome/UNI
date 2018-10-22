@@ -29,7 +29,12 @@ for i = 1 : 50
        k = 1; 
     end
 end
+//oder
+F = [1:10; 11:20; 21:30; 31:40; 41:50];
 
-if (j%10) == 0 then
-    error("AAAAAAAAAAAA");
-end
+//Aufgabe 3
+E = [];
+
+
+
+
