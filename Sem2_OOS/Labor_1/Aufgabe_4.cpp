@@ -150,9 +150,3 @@ int main()
 	showPlayer(player2);
 	showWinner(player1, player2);
 }
-
-
-
-
-
-
