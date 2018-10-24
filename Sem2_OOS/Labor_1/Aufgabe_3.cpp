@@ -36,12 +36,13 @@ void drucken() {
 	// Console frei machen
 	system("cls");
 	// Labyrinth ausgeben
-	/* HIER */
+	for (int i = 1; i < kZeilen; i++) {
+		for (int j = 1; j < (kSpalten + 2); j++) {
 
+			cout << labyrinth[i][j];
 
-
-
-
+		}
+	}
 }
 
 // Hilfsfunktion max
