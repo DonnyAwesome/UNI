@@ -20,16 +20,15 @@ char labyrinth[kZeilen][kSpalten + 2];
 
 // Labyrinth mit # füllen
 void initialisieren() {
-	/* HIER */
+	for (int i = 1; k < kZeilen; k++) {
+		for (int j = 1; k < kSpalten; k++) {
 
+			labyrinth[i][j] = "#";
 
-
-
-
-
-
-
-
+		}
+		labyrinth[i][j+1] = "\n";
+		labyrinth[i][j+2] = "\0";
+	}
 }
 
 // Labyrinth auf dem Bildschirm ausgeben
