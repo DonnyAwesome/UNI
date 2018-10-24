@@ -23,11 +23,11 @@ void initialisieren() {
 	for (int i = 1; i < kZeilen; i++) {
 		for (int j = 1; j < kSpalten; j++) {
 
-			labyrinth[i][j] = "#";
+			labyrinth[i][j] = '#';
 
 		}
-		labyrinth[i][j+1] = "\n";
-		labyrinth[i][j+2] = "\0";
+		labyrinth[i][kSpalten + 1] = '\n';
+		labyrinth[i][kSpalten + 2] = '\0';
 	}
 }
 
