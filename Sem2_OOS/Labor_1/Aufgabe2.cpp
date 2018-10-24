@@ -15,6 +15,6 @@ int main() {
 		cout << k+1 << "-te Zahl ist?" << endl;
 		cin >> array[k];
 	}
-	//system("pause");
+	system("pause");
 	return 0;
 }
