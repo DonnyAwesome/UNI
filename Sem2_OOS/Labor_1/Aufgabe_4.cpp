@@ -36,11 +36,9 @@ char name[15];
 // Name des Spielers eingeben
 char * enterName(char str[])
 {
-
-
-
-
-
+	cout << "Name eingeben:" << endl;
+	cin >> str;
+	return str;
 }
 
 // Den Computer zufällig waehlen lassen. 
@@ -78,22 +76,22 @@ void showPlayer(player p)
 // Die Wahl des Spielers abfragen
 objectType enterChoice()
 {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	objectType player_choice;
+	char * wahl;
+	cout << "SCHERE, STEIN, PAPIER" << endl << "Wahl eingeben:" << endl;
+	cin >> wahl;
+	
+	if (wahl == "schere"){
+		player_choice = SCHERE;		
+	} else if (wahl == "stein"){
+		player_choice = STEIN;
+	} else if (wahl == "papier"){
+		player_choice = PAPIER;	
+	} else {
+		
+		exit;
+	}
+	return player_choice;
 }
 
 // Die Wahl bestimmen, die gewonnen hat
@@ -135,6 +133,7 @@ int main()
 	showPlayer(player1);
 	showPlayer(player2);
 	showWinner(player1, player2);
+	cout << player2.choice << endl;
 }
 
 
