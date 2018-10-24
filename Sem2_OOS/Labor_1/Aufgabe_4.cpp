@@ -53,24 +53,25 @@ objectType randomChoice()
 
 // Die Wahl von STEIN etc. als String zurückgeben lassen
 char * object2str(objectType o)
-{
-
-
-
-
-
-
-
-
-
+{	
+	char * str;
+	if (o == STEIN){
+		str = "SCHERE";		
+	} else if (o == STEIN){
+		str = "STEIN";
+	} else if (o == PAPIER){
+		str = "PAPIER";	
+	} else {		
+		exit;
+	}
+	return str;
 }
 
 // Einen Text mit dem Namen des Spielers und seiner Wahl ausgeben
 void showPlayer(player p)
 {
-
-
-
+	cout << "Name: "<< p.name << endl;	
+	cout << "Choice:" << object2str(p.choice) << endl;
 }
 
 // Die Wahl des Spielers abfragen
@@ -81,16 +82,15 @@ objectType enterChoice()
 	cout << "SCHERE, STEIN, PAPIER" << endl << "Wahl eingeben:" << endl;
 	cin >> wahl;
 	
+	cout << wahl;
+	
 	if (wahl == "schere"){
 		player_choice = SCHERE;		
 	} else if (wahl == "stein"){
 		player_choice = STEIN;
 	} else if (wahl == "papier"){
 		player_choice = PAPIER;	
-	} else {
-		
-		exit;
-	}
+	} 
 	return player_choice;
 }
 
@@ -133,7 +133,6 @@ int main()
 	showPlayer(player1);
 	showPlayer(player2);
 	showWinner(player1, player2);
-	cout << player2.choice << endl;
 }
 
 
