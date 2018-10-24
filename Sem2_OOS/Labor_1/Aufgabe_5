@@ -1,0 +1,53 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+void trapezFlaeche(int Wahl) {
+
+	double Flaeche{0.0};
+	double a{ 1.0 }, b{ 1.0 }, c{ 1.0 }, gamma{ 90.0 };
+
+	cout << "bitte in Zentimeter" << endl;
+
+	if (Wahl >= 1)                                                 
+	{
+		cout << "Geben sie bitte eine Seitenlaenge" << endl;
+		cin >> a;
+		if (Wahl >= 2) 
+		{
+			cout << "Geben sie bitte eine weitere Seitenlaenge" << endl;
+			cin >> b;
+			if (Wahl == 3)
+			{
+				cout << "Geben sie bitte eine weitere Seitenlaenge" << endl;
+				cin >> c;
+				cout << "Zum Schluss noch eine Zahl fuer den Winkel" << endl;
+				cin >> gamma;
+				if (Wahl > 3)
+				{
+					cout << "Eingabe war Ungueltig, Programm wird geschlossen" << endl;
+				}
+		  }
+    }
+	}
+
+	Flaeche = 0.5*(a + c)*b*sin(gamma);
+	cout << "Die Flaeche betraegt: " << Flaeche << " Quadratzentimeter" << endl;
+
+}
+
+
+int main() {
+	int choose{ 0 };
+	
+	cout << "Hallo! hier koennen sie Flaechen aus Quadraten, Rechtecken, Parallelogrammen und Trapezen berechnen lassen" << endl;
+	cout << "druecken sie die folgende Zahl ihrer Wahl:" <<  endl;
+	cout << "Quadrat[1]    Rechteck[2] " << endl;
+	cout << " Parallelogramm & Trapez[3]" << endl;
+	cin >> choose;
+	trapezFlaeche(choose);
+
+	system("pause");
+	return 0;
+}
