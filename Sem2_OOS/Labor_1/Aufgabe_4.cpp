@@ -36,7 +36,7 @@ char name[15];
 // Name des Spielers eingeben
 char * enterName(char str[])
 {
-	cout << "Name eingeben:" << endl;
+	cout << "Name des Spielers: ";
 	cin >> str;
 	return str;
 }
@@ -55,7 +55,7 @@ objectType randomChoice()
 char * object2str(objectType o)
 {	
 	char * str;
-	if (o == STEIN){
+	if (o == SCHERE){
 		str = "SCHERE";		
 	} else if (o == STEIN){
 		str = "STEIN";
@@ -71,24 +71,24 @@ char * object2str(objectType o)
 void showPlayer(player p)
 {
 	cout << "Name: "<< p.name << endl;	
-	cout << "Choice:" << object2str(p.choice) << endl;
+	cout << "Choice: " << object2str(p.choice) << endl;
 }
 
 // Die Wahl des Spielers abfragen
 objectType enterChoice()
 {
 	objectType player_choice;
-	char * wahl;
-	cout << "SCHERE, STEIN, PAPIER" << endl << "Wahl eingeben:" << endl;
+	int wahl = 0;
+	cout << "Bitte Objektwahl eingeben (1 - Stein, 2 - Schere, 3 - Papier): " << endl;
 	cin >> wahl;
 	
-	cout << wahl;
+	cout << endl;
 	
-	if (wahl == "schere"){
+	if (wahl == 1){
 		player_choice = SCHERE;		
-	} else if (wahl == "stein"){
+	} else if (wahl == 2){
 		player_choice = STEIN;
-	} else if (wahl == "papier"){
+	} else if (wahl == 3){
 		player_choice = PAPIER;	
 	} 
 	return player_choice;
