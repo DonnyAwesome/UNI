@@ -45,10 +45,25 @@ char * enterName(char str[])
 // Nutzen Sie srand(...) und rand().
 objectType randomChoice()
 {
-
-
-
-
+	int wahl;
+	objectType random_choice;
+	timeb tb;
+	ftime(&tb);
+	int nCount = tb.millitm + (tb.time & 0xfffff) * 1000;
+	//cout << nCount % 50 << endl;
+	
+	for (int k = 0; k < (nCount % 50); k++) {
+		wahl = rand() % 3 + 1;;
+	}
+	
+	if (wahl == 1){
+		random_choice = SCHERE;		
+	} else if (wahl == 2){
+		random_choice = STEIN;
+	} else if (wahl == 3){
+		random_choice = PAPIER;	
+	} 
+	return random_choice;
 }
 
 // Die Wahl von STEIN etc. als String zurückgeben lassen
@@ -70,8 +85,7 @@ char * object2str(objectType o)
 // Einen Text mit dem Namen des Spielers und seiner Wahl ausgeben
 void showPlayer(player p)
 {
-	cout << "Name: "<< p.name << endl;	
-	cout << "Choice: " << object2str(p.choice) << endl;
+	cout << p.name << " hat das Objekt " << object2str(p.choice) << " gewaehlt." << endl << endl;	
 }
 
 // Die Wahl des Spielers abfragen
@@ -80,14 +94,13 @@ objectType enterChoice()
 	objectType player_choice;
 	int wahl = 0;
 	cout << "Bitte Objektwahl eingeben (1 - Stein, 2 - Schere, 3 - Papier): " << endl;
-	cin >> wahl;
-	
+	cin >> wahl;	
 	cout << endl;
 	
 	if (wahl == 1){
-		player_choice = SCHERE;		
+		player_choice = STEIN;		
 	} else if (wahl == 2){
-		player_choice = STEIN;
+		player_choice = SCHERE;
 	} else if (wahl == 3){
 		player_choice = PAPIER;	
 	} 
@@ -97,29 +110,32 @@ objectType enterChoice()
 // Die Wahl bestimmen, die gewonnen hat
 objectType winningObject(objectType obj1, objectType obj2)
 {
-
-
-
-
-
-
+	objectType winner;
+	if ((obj1 == SCHERE && obj2 == PAPIER) || (obj1 == STEIN && obj2 == SCHERE) || (obj1 == PAPIER && obj2 == STEIN)){
+		winner = obj1;	
+	} 	
+	if ((obj2 == SCHERE && obj1 == PAPIER) || (obj2 == STEIN && obj1 == SCHERE) || (obj2 == PAPIER && obj1 == STEIN)){
+		winner = obj2;	
+	} 	
+	return winner;
 }
 
 // Ausgeben, wer gewonnen hat
 void showWinner(player p1, player p2)
 {
-
-
-
-
-
-
-
-
-
-
-
-
+	player winner;
+	//winner = winningObject(p1.choice, p2.choice);
+	
+	if ((p1.choice == SCHERE && p2.choice == PAPIER) || (p1.choice == STEIN && p2.choice == SCHERE) || (p1.choice == PAPIER && p2.choice == STEIN)){
+		winner = p1;	
+	} 	
+	if ((p2.choice == SCHERE && p1.choice == PAPIER) || (p2.choice == STEIN && p1.choice == SCHERE) || (p2.choice == PAPIER && p1.choice == STEIN)){
+		winner = p2;	
+	} 	
+	if ((p2.choice == SCHERE && p1.choice == SCHERE) || (p2.choice == STEIN && p1.choice == STEIN) || (p2.choice == PAPIER && p1.choice == PAPIER)){
+		winner.name = "Keiner!!!";	
+	}
+	cout << "Gewinner ist: " << winner.name << endl;
 }
 
 int main()
